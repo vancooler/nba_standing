@@ -13,3 +13,40 @@
  *= require_tree .
  *= require_self
  */
+
+h2{
+	margin-left:auto;
+	margin-right:auto;
+	text-align: center;
+}
+table{
+	border-style: solid;
+	margin-left:auto;
+	margin-right:auto;
+	margin-bottom:24px;
+}
+tr{
+	padding: 0;
+    margin: 0;
+}
+
+tr.title{
+	background: url(http://i.cdn.turner.com/nba/nba/images/standings/col_bg.gif) repeat-x center top;
+	font-weight: bold;
+}
+tr.head td{
+	background: url(http://i.cdn.turner.com/nba/nba/images/standings/hdr_bg.gif) repeat-x center top;
+	font-weight: bold;
+}
+tr.conf td{
+	background: url(http://i.cdn.turner.com/nba/nba/images/standings/conf_bg.gif) repeat-x center top;
+	color: #ffffff;
+}
+td{
+	border-right: 2px solid #CCC;
+    border-bottom: 2px solid #CCC;
+    min-width: 36px;
+    padding-left:6px;
+    padding-right:6px;
+    text-align: center;
+}

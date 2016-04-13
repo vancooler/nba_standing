@@ -1,0 +1,55 @@
+<h2>Imported Standings</h2>
+
+<%current_conf = ''%>
+<%current_div = ''%>
+<% @standings.each do |year| %>
+	<% standings = year.second %>
+	<table border="0" cellpadding="0" cellspacing="0">
+		<tr class="head">
+			<td colspan="11">Standing of <%=standings.first.season.start_year%>-<%=standings.first.season.end_year%>
+			</td>
+		</tr>
+		<%standings.each do |standing|%>
+			<%if standing.conference.conf_name != current_conf %>
+				<%current_conf = standing.conference.conf_name%>
+				<tr class="conf">
+					<td colspan="11"><%=standing.conference.conf_name%></td>
+				</tr>
+			<%end%>
+			<%if standing.division.div_name != current_div%>
+				<%current_div = standing.division.div_name%>
+				<tr class="title">
+					<td><%=standing.division.div_name%></td>
+					<td>W</td>
+		            <td>L</td>
+		            <td>PCT</td>
+		            <td>GB</td>
+		            <td>CONF</td>
+		            <td>DIV</td>
+		            <td>HOME</td>
+		            <td>ROAD</td>
+		            <td>L 10</td>
+		            <td>STREAK</td>
+				</tr>
+			<%end%>
+
+			<tr>
+				<td><%=standing.team.team_name%><sup><%=((standing.conf_rank > 0) ? standing.conf_rank : "o")%></sup></td>
+				<td><%=standing.win%></td>
+				<td><%=standing.lost%></td>
+				<td><%=standing.pct%></td>
+				<td><%=standing.gb%></td>
+				<td><%=standing.conf_win%>-<%=standing.conf_lost%></td>
+				<td><%=standing.div_win%>-<%=standing.div_lost%></td>
+				<td><%=standing.home_win%>-<%=standing.home_lost%></td>
+				<td><%=standing.road_win%>-<%=standing.road_lost%></td>
+				<td><%=standing.last_ten_win%>-<%=standing.last_ten_lost%></td>
+				<td><%=(standing.streak_as_win ? "W" : "L")%> <%=standing.streak_number%></td>
+			</tr>
+		<%end%>
+
+	</table>
+	<br>
+
+
+<%end%>
