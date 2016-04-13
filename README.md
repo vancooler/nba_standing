@@ -9,16 +9,16 @@
 
 ## How it works?
 
-1. Run the following line in console to make sure all gems are well installed
-```bundle install```
+1. Run ```bundle install``` in console to make sure all gems are well installed
+
 2. Adjust the **config/database.yml** file to match the database credencials in your environment
-3. Run the following line in console to migrate database structure
-```rake db:migrate```
+3. Run ```rake db:migrate``` in console to migrate database structure
+
 4. Open **localhost:3000** in browser and it will fetch the data, store in database and display all the data in tables
 
 ## How to test it?
-Similar as above to make sure gems are installed and test database credencials are good. Then run the following line in console. It will generate a html file as **coverage/index.html** and you can open it in browser to see how the testing codes covers.
-```COVERAGE=true bundle exec rspec```
+Similar as above to make sure gems are installed and test database credencials are good. Then run ```COVERAGE=true bundle exec rspec``` in console. It will generate a html file as **coverage/index.html** and you can open it in browser to see how the testing codes covers.
+
 # Limitations
 
 ## Extensible
